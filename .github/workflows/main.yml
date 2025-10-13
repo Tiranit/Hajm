@@ -1,20 +1,17 @@
 name: Trade Scanner
 
 on:
-  # ✅ اجرای فوری به‌محض ثبت (push) فایل در ریپازیتوری
+  # ✅ اجرای فوری به محض push روی شاخه main
   push:
-    paths:
-      - 'trade_scanner.py'
-      - '.github/workflows/run-trade-check.yml'
     branches:
       - main
+    paths:
+      - 'main.py'
+      - '.github/workflows/run-trade-check.yml'
 
   # ✅ اجرای خودکار هر یک ساعت
   schedule:
     - cron: '0 * * * *'
-
-  # ✅ امکان اجرای دستی از تب Actions
-  workflow_dispatch:
 
 jobs:
   run-script:
@@ -33,7 +30,7 @@ jobs:
         run: |
           pip install ccxt pandas mplfinance
 
-      - name: Run trade scanner script
+      - name: Run main.py script
         env:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
