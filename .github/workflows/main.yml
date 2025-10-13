@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - 'main.py'
-      - '.github/workflows/run-trade-check.yml'
+      - '.github/workflows/main.yml'
 
   # ✅ اجرای خودکار هر یک ساعت
   schedule:
