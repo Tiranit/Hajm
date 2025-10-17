@@ -8,7 +8,7 @@ import mplfinance as mpf
 import os
 
 # تنظیمات صرافی و ایمیل
-exchange = ccxt.mexc()
+exchange = ccxt.binance()
 
 symbols = ['BTC/USDT', 'ETH/USDT', 'XPL/USDT', 'SOL/USDT']
 timeframes = ["15m", "30m", "1h", "2h"]
