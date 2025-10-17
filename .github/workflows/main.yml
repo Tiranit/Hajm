@@ -28,8 +28,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install ccxt pandas mplfinance
+          pip install ccxt pandas mplfinance requests
 
+      # 🟢 مرحله‌ی جدید: چاپ آی‌پی عمومی سرور GitHub Actions
+      - name: Show public IP of GitHub runner
+        run: |
+          echo "🔍 Checking public IP..."
+          python -c "import requests; print('🌐 Public IP:', requests.get('https://api.ipify.org').text)"
+
+      # 🚀 اجرای کد اصلی شما
       - name: Run main.py script
         env:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
