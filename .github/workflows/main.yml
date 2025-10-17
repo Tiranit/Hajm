@@ -9,7 +9,7 @@ on:
       - 'main.py'
       - '.github/workflows/main.yml'
 
-  # ✅ اجرای خودکار هر یک ساعت
+  # ✅ اجرای خودکار هر یکی ساعت
   schedule:
     - cron: '0 * * * *'
 
